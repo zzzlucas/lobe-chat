@@ -40,7 +40,7 @@ export default {
     addAi: '添加一条 AI 消息',
     addUser: '添加一条用户消息',
     more: '更多',
-    send: '发送',
+    send: '发送', // zzzflag
     sendWithCmdEnter: '按 {{meta}} + Enter 键发送',
     sendWithEnter: '按 Enter 键发送',
     stop: '停止',
@@ -66,7 +66,8 @@ export default {
     viewMore: '查看更多',
   },
   messageAction: {
-    delAndRegenerate: '删除并重新生成',
+    // zzzflag
+    delAndRegenerate: '删除并重新生成zzzflag',
     regenerate: '重新生成',
   },
   newAgent: '新建助手',

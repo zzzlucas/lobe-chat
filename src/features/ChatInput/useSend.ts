@@ -10,6 +10,7 @@ export type UseSendMessageParams = Pick<
   'onlyAddUserMessage' | 'isWelcomeQuestion'
 >;
 
+// zzzflag sendMessage-发送消息
 export const useSendMessage = () => {
   const [sendMessage, updateInputMessage] = useChatStore((s) => [
     s.sendMessage,
@@ -46,7 +47,7 @@ export const useSendMessage = () => {
       ...params,
     });
 
-    updateInputMessage('');
+    updateInputMessage('11');
     clearChatUploadFileList();
 
     // const hasSystemRole = agentSelectors.hasSystemRole(useAgentStore.getState());

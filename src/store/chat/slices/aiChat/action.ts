@@ -119,6 +119,7 @@ export const chatAiChat: StateCreator<
   ...chatRag(set, get, ...rest),
 
   delAndRegenerateMessage: async (id) => {
+    console.log('zzzflag-delAndRegenerateMessage');
     const traceId = chatSelectors.getTraceIdByMessageId(id)(get());
     get().internal_resendMessage(id, traceId);
     get().deleteMessage(id);
@@ -477,6 +478,7 @@ export const chatAiChat: StateCreator<
     };
   },
 
+  // zzzflag 重新生成-具体逻辑
   internal_resendMessage: async (messageId, traceId) => {
     // 1. 构造所有相关的历史记录
     const chats = chatSelectors.currentChats(get());
