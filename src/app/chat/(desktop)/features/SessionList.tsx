@@ -5,7 +5,8 @@ import { memo } from 'react';
 import FolderPanel from '@/features/FolderPanel';
 
 import SessionListContent from '../../features/SessionListContent';
-import Header from './SessionHeader';
+import SessionSearchBar from '../../features/SessionSearchBar';
+import SessionHeader from './SessionHeader';
 
 const useStyles = createStyles(({ stylish, css, cx }) =>
   cx(
@@ -24,10 +25,11 @@ const Sessions = memo(() => {
 
   return (
     <FolderPanel>
-      <Header />
+      <SessionSearchBar />
       <DraggablePanelBody className={styles}>
         <SessionListContent />
       </DraggablePanelBody>
+      <SessionHeader />
     </FolderPanel>
   );
 });

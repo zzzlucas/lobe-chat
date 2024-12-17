@@ -1,4 +1,4 @@
-import { Avatar, ChatHeaderTitle } from '@lobehub/ui';
+import { Avatar } from '@lobehub/ui';
 import { Skeleton } from 'antd';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
@@ -8,11 +8,20 @@ import { Flexbox } from 'react-layout-kit';
 import { useSessionStore } from '@/store/session';
 import { agentSelectors, sessionSelectors } from '@/store/session/selectors';
 import { pathString } from '@/utils/url';
+import { createStyles } from 'antd-style';
 
-import Tags from './Tags';
+const useStyles = createStyles(({ css }) => ({
+  txt: css`
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    height: 40px;
+  `,
+}));
 
 const Main = memo(() => {
   const { t } = useTranslation('chat');
+  const { styles } = useStyles();
 
   const router = useRouter();
 
@@ -50,7 +59,8 @@ const Main = memo(() => {
         size={40}
         title={title}
       />
-      <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
+      {/* <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} /> */}
+      <div className={styles.txt}>{displayTitle}</div>
     </Flexbox>
   );
 });

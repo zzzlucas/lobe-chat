@@ -8,8 +8,6 @@ import { getServerConfig } from '@/config/server';
 import { DEFAULT_LANG, LOBE_LOCALE_COOKIE } from '@/const/locale';
 import {
   LOBE_THEME_APPEARANCE,
-  LOBE_THEME_NEUTRAL_COLOR,
-  LOBE_THEME_PRIMARY_COLOR,
 } from '@/const/theme';
 import Layout from '@/layout/GlobalLayout';
 import { isMobileDevice } from '@/utils/responsive';
@@ -22,8 +20,10 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   // get default theme config to use with ssr
   const cookieStore = cookies();
   const appearance = cookieStore.get(LOBE_THEME_APPEARANCE);
-  const neutralColor = cookieStore.get(LOBE_THEME_NEUTRAL_COLOR);
-  const primaryColor = cookieStore.get(LOBE_THEME_PRIMARY_COLOR);
+  // const neutralColor = cookieStore.get(LOBE_THEME_NEUTRAL_COLOR);
+  // const primaryColor = cookieStore.get(LOBE_THEME_PRIMARY_COLOR);
+  const neutralColor = '#4C5CEC';
+  const primaryColor = '#4C5CEC';
   const lang = cookieStore.get(LOBE_LOCALE_COOKIE);
   const direction = isRtlLang(lang?.value || DEFAULT_LANG) ? 'rtl' : 'ltr';
 
@@ -34,8 +34,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
           <Layout
             defaultAppearance={appearance?.value}
             defaultLang={lang?.value}
-            defaultNeutralColor={neutralColor?.value as any}
-            defaultPrimaryColor={primaryColor?.value as any}
+            defaultNeutralColor={neutralColor}
+            defaultPrimaryColor={primaryColor}
             enableOAuthSSO={ENABLE_OAUTH_SSO}
           >
             {children}

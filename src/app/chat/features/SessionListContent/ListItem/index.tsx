@@ -34,11 +34,12 @@ const ListItem = memo<ListItemProps & { avatar: string; avatarBackground?: strin
     const avatarRender = useMemo(
       () => (
         <Avatar
+          alt={'MY_SESSION_AVATAR'}
           animation={isHovering}
           avatar={avatar}
           background={avatarBackground}
           shape="circle"
-          size={46}
+          size={30}
         />
       ),
       [isHovering, avatar, avatarBackground],

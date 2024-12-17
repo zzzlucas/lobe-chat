@@ -1,13 +1,10 @@
 import { Icon } from '@lobehub/ui';
-import { Button, Dropdown, Space } from 'antd';
+import { Button, Space } from 'antd';
 import { createStyles } from 'antd-style';
 import {
   ChevronUp,
   CornerDownLeft,
-  LucideCheck,
-  LucideChevronDown,
   LucideCommand,
-  LucidePlus,
 } from 'lucide-react';
 import { rgba } from 'polished';
 import { memo } from 'react';
@@ -15,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
-import SaveTopic from '@/features/ChatInput/Topic';
 import { useSendMessage } from '@/features/ChatInput/useSend';
 import { useChatStore } from '@/store/chat';
 import { useGlobalStore } from '@/store/global';
@@ -100,8 +96,9 @@ const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) =
       flex={'none'}
       gap={8}
       horizontal
-      padding={'0 24px'}
+      padding={'0 12px'}
     >
+      {/*  */}
       <Flexbox align={'center'} gap={8} horizontal>
         {canUpload && (
           <>
@@ -110,8 +107,9 @@ const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) =
           </>
         )}
       </Flexbox>
-      <Flexbox align={'center'} gap={8} horizontal>
-        <Flexbox
+      <Flexbox horizontal>
+      {/* align={'center'}  gap={8} */}
+        {/* <Flexbox
           gap={4}
           horizontal
           style={{ color: theme.colorTextDescription, fontSize: 12, marginRight: 12 }}
@@ -121,9 +119,10 @@ const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) =
           <span>/</span>
           {wrapperShortcut}
           <span>{t('input.warp')}</span>
-        </Flexbox>
-        <SaveTopic />
-        <Flexbox style={{ minWidth: 92 }}>
+        </Flexbox> */}
+        {/* <SaveTopic /> */}
+        <Flexbox>
+        {/* style={{ minWidth: 92 }} */}
           {loading ? (
             <Button
               className={styles.loadingButton}
@@ -143,7 +142,7 @@ const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) =
               >
                 {t('input.send')}
               </Button>
-              <Dropdown
+              {/* <Dropdown
                 menu={{
                   items: [
                     {
@@ -184,7 +183,7 @@ const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) =
                   icon={<Icon icon={LucideChevronDown} />}
                   type={'primary'}
                 />
-              </Dropdown>
+              </Dropdown> */}
             </Space.Compact>
           )}
         </Flexbox>

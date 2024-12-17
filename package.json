@@ -31,7 +31,7 @@
     "build-sitemap": "next-sitemap --config next-sitemap.config.mjs",
     "build:analyze": "ANALYZE=true next build",
     "build:docker": "DOCKER=true next build && npm run build-sitemap",
-    "dev": "next dev -p 3010",
+    "dev": "next dev -p 3030",
     "docs": "lobe-i18n md && npm run workflow:docs",
     "i18n": "npm run workflow:i18n && lobe-i18n",
     "i18n:docs": "lobe-i18n md && npm run workflow:docs",

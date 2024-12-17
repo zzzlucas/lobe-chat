@@ -13,6 +13,7 @@ import { agentSelectors, sessionSelectors } from '@/store/session/selectors';
 import ListItem from '../../ListItem';
 import CreateGroupModal from '../../Modals/CreateGroupModal';
 import Actions from './Actions';
+import { MY_SESSION_AVATAR } from '@/const/meta';
 
 interface SessionItemProps {
   id: string;
@@ -37,7 +38,8 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
         agentSelectors.getTitle(meta),
         agentSelectors.getDescription(meta),
         systemRole,
-        agentSelectors.getAvatar(meta),
+        // agentSelectors.getAvatar(meta),
+        MY_SESSION_AVATAR,
         meta.backgroundColor,
         session?.updatedAt,
         session.config.model,

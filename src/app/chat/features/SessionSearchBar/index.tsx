@@ -4,6 +4,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useSessionStore } from '@/store/session';
+import { Flexbox } from 'react-layout-kit';
 
 const SessionSearchBar = memo(() => {
   const { t } = useTranslation('chat');
@@ -14,6 +15,7 @@ const SessionSearchBar = memo(() => {
 
   const { mobile } = useResponsive();
   return (
+    <Flexbox gap={16} padding={16}>
     <SearchBar
       allowClear
       enableShortKey={!mobile}
@@ -28,6 +30,7 @@ const SessionSearchBar = memo(() => {
       type={mobile ? 'block' : 'ghost'}
       value={keywords}
     />
+    </Flexbox>
   );
 });
 
